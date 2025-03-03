@@ -1,12 +1,15 @@
 "use client";
 
 import { cn } from "@/shared/lib/utils";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { WheelImage } from "./WheelImage";
 import { Title } from "./Title";
 import { SelectorDiameter } from "./SelectorDiameter";
 import { Button } from "../ui";
 import { IWheelFullData } from "@/types/types";
+import { Counter } from "./Counter";
+import { diameters } from "@/types/constants";
+import { Diameter } from "@prisma/client";
 
 interface Props {
 	className?: string;
@@ -14,23 +17,27 @@ interface Props {
 	wheel: IWheelFullData;
 }
 
-export const ChooseWheelFrom: FC<Props> = ({
+export const ChooseWheelForm: FC<Props> = ({
 	className,
 	onClickAdd,
 	wheel,
 }) => {
-	const cost = 2900;
-	const [selectedDiameters, setSelectedDiameters] = useState<number[]>([]);
+	const [selectedDiameters, setSelectedDiameters] = useState<number>(
+		wheel.diameters[0].id
+	);
+	const [count, setCount] = useState<number>(4);
+	const [cost, setCost] = useState<number>(wheel.price);
 
 	const handleSelectDiameters = (id: number) => {
-		if (selectedDiameters.includes(id)) {
-			setSelectedDiameters((prev) => prev.filter((item) => item !== id));
-		} else {
-			setSelectedDiameters((prev) => [...prev, id]);
-		}
-
-		console.log(selectedDiameters);
+		setSelectedDiameters(id);
 	};
+
+	useEffect(() => {
+		const dataDiameter = wheel.diameters.find(
+			(diameter) => diameter.id === selectedDiameters
+		);
+		setCost(dataDiameter!.price * count + wheel.price);
+	}, [selectedDiameters, cost, count]);
 
 	return (
 		<div className={cn(className, "flex")}>
@@ -66,12 +73,33 @@ export const ChooseWheelFrom: FC<Props> = ({
 							name: item.name,
 							cost: item.price,
 						}))}
-						selectedValues={selectedDiameters}
+						selectedValue={selectedDiameters}
 						onSelectItem={handleSelectDiameters}
 					/>
 				</div>
 
-				<Button className="w-full">Add to cart [{cost} PLN]</Button>
+				<div>
+					<Title
+						text="Count"
+						size="xs"
+						className="font-extrabold"
+					></Title>
+					<Counter
+						value={count}
+						handleChange={(value) => setCount(value)}
+					/>
+				</div>
+				<hr />
+				<div className="text-2xl">
+					<Title
+						text="Cost"
+						size="xs"
+						className="font-extrabold"
+					></Title>
+					<span className="font-extrabold">{cost}</span> PLN
+				</div>
+
+				<Button className="w-full">Add to cart</Button>
 			</div>
 		</div>
 	);

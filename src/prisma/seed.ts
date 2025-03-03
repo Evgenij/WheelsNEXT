@@ -65,7 +65,7 @@ async function up() {
 			name: "YO-4200",
 			color: "Gold",
 			carBrandId: 1,
-			price: 3100,
+			price: 2500,
 			image: "/pictures/wheels/pol_pl_4x-Felgi-19-5x120-m-in-do-BMW-3-E46-E90-E91-E92-E93-F30-F31-4-F32-F33-F36-Z4-E89-B5601-91319_1.png",
 			diameters: {
 				connect: diameters.slice(0, 5),
@@ -78,7 +78,7 @@ async function up() {
 			name: "BX-5400",
 			color: "Gray",
 			carBrandId: 1,
-			price: 2900,
+			price: 2200,
 			image: "/pictures/wheels/pol_pm_4x-Felgi-15-m-in-do-BMW-e21-e30-VW-Golf-I-II-III-GTI-Civic-Astra-HX025-L1879-67709_5.png",
 			diameters: {
 				connect: diameters.slice(3, 7),
@@ -91,7 +91,7 @@ async function up() {
 			name: "RX210",
 			color: "Gray",
 			carBrandId: 1,
-			price: 3200,
+			price: 2100,
 			image: "/pictures/wheels/pol_pm_4x-Felgi-16-17-m-in-do-SMART-Brabus-Forfour-II-Fortwo-III-FR762-80654_4.png",
 			diameters: {
 				connect: diameters.slice(4, 8),
@@ -103,7 +103,7 @@ async function up() {
 			name: "JK-2100",
 			color: "White",
 			carBrandId: 2,
-			price: 2400,
+			price: 1900,
 			image: "/pictures/wheels/pol_pm_4x-Felgi-19-5x120-m-in-do-BMW-1-F20-2-F22-3-F30-5-F10-7-F01-XF995-HX022-55089_4.png",
 			diameters: {
 				connect: diameters.slice(2, 6),
@@ -115,7 +115,7 @@ async function up() {
 			name: "LLK33-10",
 			color: "Black",
 			carBrandId: 2,
-			price: 2600,
+			price: 1800,
 			image: "/pictures/wheels/pol_pm_4x-Felgi-19-5x120-m-in-do-BMW-1-F20-2-F22-3-F30-5-F10-7-F01-XF995-HX022-55089_4.png",
 			diameters: {
 				connect: diameters.slice(4, 10),
@@ -128,7 +128,7 @@ async function up() {
 			name: "KO-2500",
 			color: "Gray",
 			carBrandId: 3,
-			price: 2800,
+			price: 2200,
 			image: "/pictures/wheels/pol_pm_4x-Felgi-19-5x120-m-in-do-BMW-3-E46-E90-E91-E92-E93-F30-F31-4-F32-F33-F36-5-F10-F11-IN292-Y1091-82696_1.png",
 			diameters: {
 				connect: diameters.slice(2, 9),
@@ -140,7 +140,7 @@ async function up() {
 			name: "FX-1000",
 			color: "Black",
 			carBrandId: 3,
-			price: 2900,
+			price: 2300,
 			image: "/pictures/wheels/pol_pm_4x-Felgi-19-5x120-m-in-do-BMW-3-E46-E90-E91-E92-F30-F31-5-E60-F10-F11-7-F01-F02-F04-BY956-82325_1.png",
 			diameters: {
 				connect: diameters.slice(1, 11),

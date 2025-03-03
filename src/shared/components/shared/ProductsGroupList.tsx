@@ -34,12 +34,6 @@ export const ProductsGroupList: FC<Props> = ({
 	const intersection = useIntersection(intersectionRef, {
 		threshold: 0.4,
 	});
-
-	// handlers
-	const handlerChange: React.ChangeEventHandler<HTMLInputElement> = (
-		e: React.ChangeEvent<HTMLInputElement>
-	) => {};
-
 	// hooks
 	useEffect(() => {
 		if (intersection?.isIntersecting) {
@@ -53,7 +47,7 @@ export const ProductsGroupList: FC<Props> = ({
 		<div className={className} id={title} ref={intersectionRef}>
 			<Title text={title} size="lg" className="font-extrabold mb-5" />
 
-			<div className={cn("grid grid-cols-3 gap-4", listClassName)}>
+			<div className={cn("grid grid-cols-3 gap-8", listClassName)}>
 				{items.map((product, i) => (
 					<ProductCard
 						key={product.id}

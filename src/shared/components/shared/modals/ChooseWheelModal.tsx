@@ -7,7 +7,7 @@ import {
 } from "@/shared/components/ui/dialog";
 import { useRouter } from "next/navigation";
 import React, { FC } from "react";
-import { ChooseWheelFrom } from "../ChooseWheelFrom";
+import { ChooseWheelForm } from "../ChooseWheelForm";
 import { IWheelFullData } from "@/types/types";
 
 interface Props {
@@ -23,7 +23,7 @@ export const ChooseWheelModal: FC<Props> = ({ className, wheel }) => {
 				<DialogTitle className="text-2xl font-bold text-center p-5 bg-slate-100">
 					Choose a wheel
 				</DialogTitle>
-				<ChooseWheelFrom wheel={wheel} />
+				<ChooseWheelForm wheel={wheel} />
 			</DialogContent>
 		</Dialog>
 	);

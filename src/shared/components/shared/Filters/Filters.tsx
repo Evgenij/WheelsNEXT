@@ -29,7 +29,12 @@ export const Filters: FC<Props> = ({ className }) => {
 	};
 
 	return (
-		<div className={cn("flex flex-col space-y-6", className)}>
+		<div
+			className={cn(
+				"flex flex-col space-y-6 border-r-slate-200 border-r pr-5",
+				className
+			)}
+		>
 			<Title text="Filters" size="sm" className="font-bold" />
 
 			<CheckboxGroup

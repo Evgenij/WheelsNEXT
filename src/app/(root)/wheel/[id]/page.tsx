@@ -1,4 +1,5 @@
 import {
+	ChooseWheelForm,
 	Container,
 	SelectorDiameter,
 	Title,
@@ -29,7 +30,7 @@ export default async function PageWheel({ className, params }: Props) {
 
 	return (
 		<Container className="flex gap-4 my-10">
-			<div className="w-1/2">
+			{/* <div className="w-1/2">
 				<WheelImage
 					src={dataWheel.image}
 					diameters={4}
@@ -42,7 +43,8 @@ export default async function PageWheel({ className, params }: Props) {
 					size="md"
 					className="font-extrabold mb-1"
 				></Title>
-			</div>
+			</div> */}
+			<ChooseWheelForm className="w-full" wheel={dataWheel} />
 		</Container>
 	);
 }

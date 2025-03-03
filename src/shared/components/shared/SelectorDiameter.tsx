@@ -14,19 +14,17 @@ interface Props {
 	className?: string;
 	items: readonly Variant[];
 	onSelectItem: (value: number) => void;
-	selectedValues: number[];
+	selectedValue: number;
 }
 
 export const SelectorDiameter: FC<Props> = ({
 	className,
 	items,
-	selectedValues,
+	selectedValue,
 	onSelectItem,
 }) => {
 	useEffect(() => {
-		if (selectedValues.length === 0) {
-			onSelectItem(items[0].id);
-		}
+		onSelectItem(items[0].id);
 	}, []);
 
 	return (
@@ -40,7 +38,7 @@ export const SelectorDiameter: FC<Props> = ({
 						key={item.id}
 						className={cn(
 							"px-2 p-1 text-center w-full bg-white flex flex-col items-center",
-							selectedValues.includes(item.id)
+							selectedValue === item.id
 								? "bg-primary text-white"
 								: "hover:bg-gray-200"
 						)}

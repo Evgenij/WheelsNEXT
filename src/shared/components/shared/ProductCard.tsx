@@ -30,10 +30,10 @@ export const ProductCard: React.FC<Wheel> = ({
 
 				<div className="flex justify-between items-center mt-4">
 					<span className="text-base">
-						from <b>{price} PLN</b>
+						from <b>{price + diameters[0].price * 4} PLN</b>
 					</span>
 
-					<Button variant="secondary" className="text-base font-bold">
+					<Button variant="default" className="text-base font-bold">
 						<Plus size={20} className="mr-1" />
 						Add to cart
 					</Button>
